@@ -1,0 +1,17 @@
+.dd-handle:hover{
+    font-weight: normal;
+}
+.rct-title{
+    float: left;
+    width: 20%;
+}
+.rct-description{
+    float: left;
+    width: 55%;
+    padding: 0 5px;
+}
+.rct-qty, .rct-unit{
+    float: left;
+    width: 10%;
+    padding: 0 5px;
+}
