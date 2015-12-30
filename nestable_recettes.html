@@ -467,7 +467,7 @@
     
                                     <ol class="dd-list">
                                       <li ng-repeat="ingredient in ingredients" class="dd-item dd3-item" data-id="{{ingredient.id}}">
-                                          <div class="dd-handle dd3-handle"></div>
+                                          <div class="dd-handle dd3-handle"><i class="fa fa-arrows"></i></div>
                                             <div class="dd3-content">
                                               <div class="clearfix">
                                               <div class="rct-title" ><select ng-options="ingredient.title as ingredient.title for ingredient in ingredients" ng-model="ingredient.title" class="form-control"></select></div>
@@ -543,7 +543,7 @@
                  var list = e.length ? e : $(e.target),
                          output = list.data('output');
                  if (window.JSON) {
-                     //output.val(window.JSON.stringify(list.nestable('serialize')));//, null, 2));
+                     output.val(window.JSON.stringify(list.nestable('serialize')));//, null, 2));
                  } else {
                      output.val('JSON browser support required for this demo.');
                  }

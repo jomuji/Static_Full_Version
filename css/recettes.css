@@ -21,9 +21,7 @@
     width: 13%;
     padding: 0 5px;
 }
-#nestable2 .dd-item {
-    margin-right:30px;
-}
+
 #nestable2 .dd-placeholder .dd3-handle{
     background: red;
 }
@@ -32,7 +30,7 @@
     height: 30px;
     position: absolute;
     right: -40px;
-    top:4px;
+    top:9px;
     background-color: #ed5565;
     border-color: #ed5565;
     color:#fff;
@@ -42,7 +40,9 @@
     font-size:16px;
     line-height: 25px;
 }
-
+.ibox-content{
+    padding:10px 50px 10px 30px;
+}
 
 /**
  * Nestable Draggable Handles
@@ -56,13 +56,29 @@
 }
 .dd3-content:hover { color: #2ea8e5; background: #fff; }
 .dd-dragel > .dd3-item > .dd3-content { margin: 0; }
-.dd3-item > button { margin-left: -30px; }
-.dd-handle.dd3-handle { position: absolute; margin: 0; left: 1px; top: 1px; bottom: 1px; cursor: pointer; width: 30px; text-indent: 100%; white-space: nowrap; overflow: hidden;
-    border: 1px solid #e7eaec;
-    background: #e7eaec!important;
-    
+.dd3-item > button { 
+    margin: 5px 0 0 -30px; 
+}
+.dd-handle.dd3-handle { 
+    position: absolute; 
+    margin: 0; 
+    left: 0; 
+    top: 0; 
+    bottom: auto; 
+    cursor: pointer; 
+    width: 30px; 
+    height: 46px; 
+    text-align: center;
+    white-space: nowrap; 
+    overflow: hidden;
+    border:none;
+    background: #e7eaec!important;   
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    padding:10px 0;
 }
-.dd3-handle:before { content: "\f047"; font-family: 'FontAwesome'; display: block; position: absolute; left: 0; top: 13px; width: 30px; text-align: center; text-indent: 0; color: #fff; font-size: 20px; font-weight: normal; }
+#nestable2 .dd-handle{
+    padding:10px 0;
+}
+
 .dd3-handle:hover { background: red }
