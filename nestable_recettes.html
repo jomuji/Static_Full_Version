@@ -15,9 +15,6 @@
     <link href="css/recettes.css" rel="stylesheet">
     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-     <!-- Angular-xeditable -->
-    <link href="js/angular/angular-xeditable/css/xeditable.css" rel="stylesheet">
-    <script src="js/angular/angular-xeditable/js/xeditable.js"></script>
     <script src="js/angular/app.js"></script>
 
 </head>
@@ -458,27 +455,28 @@
                 </div>
                 
                 
-                <div class="col-lg-10" >
+                <div class="col-lg-12" >
                     <div ng-app="myApp">
                         <div class="ibox " ng-controller="myCtrl">
                         <div class="ibox-title">
-                            <h5>Nestable basic list</h5>
+                            <h5>Liste des Ingredients</h5>
                         </div>
                         <div class="ibox-content">
                             <div   class="dd" id="nestable2">
     
                                     <ol class="dd-list">
-                                      <li ng-repeat="ingredient in ingredients" class="dd-item" data-id="{{ingredient.id}}">
-                                          <div class="dd-handle">
+                                      <li ng-repeat="ingredient in ingredients" class="dd-item dd3-item" data-id="{{ingredient.id}}">
+                                          <div class="dd-handle dd3-handle"></div>
+                                            <div class="dd3-content">
                                               <div class="clearfix">
-                                              <div class="rct-title" >{{ingredient.title}}</div>
-                                              <div class="rct-description">{{ingredient.description}}</div>
-                                              <div class="rct-qty">{{ingredient.quantity}}</div>
-                                              <div class="rct-unit">{{ingredient.unit }}</div>
+                                              <div class="rct-title" ><input type="text" ng-model="ingredient.title" class="form-control"></div>
+                                              <div class="rct-description"><input type="text" ng-model="ingredient.description" class="form-control"></div>
+                                              <div class="rct-qty"><input type="text" ng-model="ingredient.quantity" class="form-control"></div>
+                                              <div class="rct-unit"><input type="text" ng-model="ingredient.unit" class="form-control"></div>
                                               </div>
                                               
-                                        </div>
-                                        
+                                            </div>
+                                            <button class="remove btn btn-danger btn-xs"  ng-click="removeIngredient()">-</button>
                                       </li>
                                     </ol>
                                 
@@ -487,6 +485,7 @@
                                
                                 
                             </div>
+                            <button class="btn btn-primary text-uppercase" ng-click="addNewIngredient()" type="button">Ajouter un ingredient</button>
                             <div class="m-t-md">
                                 <h5>Serialised Output</h5>
                             </div>
@@ -542,7 +541,7 @@
                  var list = e.length ? e : $(e.target),
                          output = list.data('output');
                  if (window.JSON) {
-                     output.val(window.JSON.stringify(list.nestable('serialize')));//, null, 2));
+                     //output.val(window.JSON.stringify(list.nestable('serialize')));//, null, 2));
                  } else {
                      output.val('JSON browser support required for this demo.');
                  }

@@ -3,15 +3,58 @@
 }
 .rct-title{
     float: left;
-    width: 20%;
+    width: 15%;
+    padding: 0 5px;
 }
 .rct-description{
     float: left;
-    width: 55%;
+    width: 70%;
     padding: 0 5px;
 }
 .rct-qty, .rct-unit{
     float: left;
-    width: 10%;
+    width: 7%;
     padding: 0 5px;
 }
+#nestable2 .dd-item {
+    margin-right:30px;
+}
+#nestable2 .dd-item > button.remove{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: -40px;
+    top:4px;
+    background-color: #ed5565;
+    border-color: #ed5565;
+    color:#fff;
+}
+#nestable2 .dd-item > button.remove:before{
+    content: "\f00d";
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-size:16px;
+}
+
+/**
+ * Nestable Draggable Handles
+ */
+.dd3-content { display: block; margin: 5px 0; padding: 5px 10px 5px 40px; color: #333; text-decoration: none; font-weight: normal; border: 1px solid #e7eaec;
+    background: #f5f5f5;
+    
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    box-sizing: border-box; -moz-box-sizing: border-box;
+}
+.dd3-content:hover { color: #2ea8e5; background: #fff; }
+.dd-dragel > .dd3-item > .dd3-content { margin: 0; }
+.dd3-item > button { margin-left: 30px; }
+#nestable2 .dd3-handle { position: absolute; margin: 0; left: 1px; top: 1px; bottom: 1px; cursor: pointer; width: 30px; text-indent: 100%; white-space: nowrap; overflow: hidden;
+    border: 1px solid #e7eaec;
+    background: #e7eaec;
+    
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.dd3-handle:before { content: "\f047"; font-family: 'FontAwesome'; display: block; position: absolute; left: 0; top: 13px; width: 100%; text-align: center; text-indent: 0; color: #fff; font-size: 20px; font-weight: normal; }
+.dd3-handle:hover { background: #ddd; }

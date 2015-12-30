@@ -1,16 +1,16 @@
-var app = angular.module('myApp', []);
+//var app = angular.module('myApp', []);
 
 /* $http ajax calls really belongs in a service, 
 but I'll be using them inside the controller for this demo */ 
 
-app.controller('myCtrl', function($scope, $http) {
-    $http.get('js/angular/ingredients.json').
-       success(function(data) {
-         $scope.ingredients = data.ingredients;
-       }).
-       error(function() {
-         // log error
-       });
+//app.controller('myCtrl', function($scope, $http) {
+//    $http.get('js/angular/ingredients.json').
+//       success(function(data) {
+//         $scope.ingredients = data.ingredients;
+//       }).
+//       error(function() {
+//         // log error
+//       });
     
 //  $http.get('js/angular/ingredients.json').then(function(response) {
 //    $scope.ingredients = response.data.ingredients;
@@ -30,14 +30,40 @@ app.controller('myCtrl', function($scope, $http) {
 //    //$scope.msg = 'Data sent: '+ JSON.stringify($scope.languages);
 //  };
     
-    $scope.editData=function(ingredient){
-        ingredient.editEnabled = true;
-      };
+//    $scope.editData=function(ingredient){
+//        ingredient.editEnabled = true;
+//      };
+//    
+//    $scope.save = function(){
+//      $http.post('js/angular/saveJson.php', $scope.ingredients).then(function() {
+//        // log success
+//          $scope.msg = 'Data saved';
+//      });
+//    };
+//});
+
+var app = angular.module('myApp', []);
+
+  app.controller('myCtrl', function($scope, $http) {
+      
+      $http.get('js/angular/ingredients.json').
+       success(function(data) {
+         $scope.ingredients = data.ingredients;
+       }).
+       error(function() {
+         // log error
+       });
+
+  //$scope.choices = [{id: 'choice1'}, {id: 'choice2'}];
+  
+  $scope.addNewIngredient = function() {
+    var newItemNo = $scope.ingredients.length+1;
+    $scope.ingredients.push({'id':+newItemNo});
+  };
     
-    $scope.save = function(){
-      $http.post('js/angular/saveJson.php', $scope.ingredients).then(function() {
-        // log success
-          $scope.msg = 'Data saved';
-      });
-    };
+  $scope.removeIngredient = function() {
+    var lastItem = $scope.ingredients.length-1;
+    $scope.ingredients.splice(lastItem);
+  };
+  
 });
