@@ -8,18 +8,26 @@
 }
 .rct-description{
     float: left;
-    width: 70%;
+    width: 65%;
     padding: 0 5px;
 }
-.rct-qty, .rct-unit{
+.rct-qty{
     float: left;
     width: 7%;
+    padding: 0 5px;
+}
+.rct-unit{
+    float: left;
+    width: 13%;
     padding: 0 5px;
 }
 #nestable2 .dd-item {
     margin-right:30px;
 }
-#nestable2 .dd-item > button.remove{
+#nestable2 .dd-placeholder .dd3-handle{
+    background: red;
+}
+.dd-item > .remove{
     width: 30px;
     height: 30px;
     position: absolute;
@@ -29,12 +37,12 @@
     border-color: #ed5565;
     color:#fff;
 }
-#nestable2 .dd-item > button.remove:before{
-    content: "\f00d";
-    font-family: 'FontAwesome';
+.dd-item > .remove .fa{
     font-weight: normal;
     font-size:16px;
+    line-height: 25px;
 }
+
 
 /**
  * Nestable Draggable Handles
@@ -48,13 +56,13 @@
 }
 .dd3-content:hover { color: #2ea8e5; background: #fff; }
 .dd-dragel > .dd3-item > .dd3-content { margin: 0; }
-.dd3-item > button { margin-left: 30px; }
-#nestable2 .dd3-handle { position: absolute; margin: 0; left: 1px; top: 1px; bottom: 1px; cursor: pointer; width: 30px; text-indent: 100%; white-space: nowrap; overflow: hidden;
+.dd3-item > button { margin-left: -30px; }
+.dd-handle.dd3-handle { position: absolute; margin: 0; left: 1px; top: 1px; bottom: 1px; cursor: pointer; width: 30px; text-indent: 100%; white-space: nowrap; overflow: hidden;
     border: 1px solid #e7eaec;
-    background: #e7eaec;
+    background: #e7eaec!important;
     
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
-.dd3-handle:before { content: "\f047"; font-family: 'FontAwesome'; display: block; position: absolute; left: 0; top: 13px; width: 100%; text-align: center; text-indent: 0; color: #fff; font-size: 20px; font-weight: normal; }
-.dd3-handle:hover { background: #ddd; }
+.dd3-handle:before { content: "\f047"; font-family: 'FontAwesome'; display: block; position: absolute; left: 0; top: 13px; width: 30px; text-align: center; text-indent: 0; color: #fff; font-size: 20px; font-weight: normal; }
+.dd3-handle:hover { background: red }

@@ -12,6 +12,7 @@
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    
     <link href="css/recettes.css" rel="stylesheet">
     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -469,14 +470,15 @@
                                           <div class="dd-handle dd3-handle"></div>
                                             <div class="dd3-content">
                                               <div class="clearfix">
-                                              <div class="rct-title" ><input type="text" ng-model="ingredient.title" class="form-control"></div>
+                                              <div class="rct-title" ><select ng-options="ingredient.title as ingredient.title for ingredient in ingredients" ng-model="ingredient.title" class="form-control"></select></div>
                                               <div class="rct-description"><input type="text" ng-model="ingredient.description" class="form-control"></div>
                                               <div class="rct-qty"><input type="text" ng-model="ingredient.quantity" class="form-control"></div>
-                                              <div class="rct-unit"><input type="text" ng-model="ingredient.unit" class="form-control"></div>
+                                              <div class="rct-unit"><select ng-options="ingredient.unit as ingredient.unit for ingredient in ingredients" ng-model="ingredient.unit" class="form-control"></select></div>
                                               </div>
                                               
                                             </div>
-                                            <button class="remove btn btn-danger btn-xs"  ng-click="removeIngredient()">-</button>
+                                            <a href="javascript:;" class="remove btn btn-danger btn-xs"  ng-click="removeIngredient()"><i class="fa fa-times"></i></a>
+                                            
                                       </li>
                                     </ol>
                                 
