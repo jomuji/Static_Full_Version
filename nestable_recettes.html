@@ -393,67 +393,7 @@
                     </div>
                 </div>
             <div class="row">
-                <div class="col-lg-6 recettes">
-                    <div class="ibox ">
-                        <div class="ibox-title">
-                            <h5>Nestable basic list</h5>
-                        </div>
-                        <div class="ibox-content">
 
-                            <p  class="m-b-lg">
-                                <strong>Nestable</strong> is an interactive hierarchical list. You can drag and drop to rearrange the order. It works well on touch-screens.
-                            </p>
-
-                            <div class="dd" id="nestable">
-                                <ol class="dd-list" >
-                                    <li class="dd-item" data-id="1">
-                                        <div class="dd-handle">
-                                            <div class="clearfix">
-                                                <div class="rct-title">test</div>
-                                                <div class="rct-description">Description</div>
-                                                <div class="rct-qty">qte</div>
-                                                <div class="rct-unit">uty</div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="dd-item" data-id="2">
-                                        <div class="dd-handle">2 - Dolor sit</div>
-                                        <ol class="dd-list">
-                                            <li class="dd-item" data-id="3">
-                                                <div class="dd-handle">3 - Adipiscing elit</div>
-                                            </li>
-                                            <li class="dd-item" data-id="4">
-                                                <div class="dd-handle">4 - Nonummy nibh</div>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li class="dd-item" data-id="5">
-                                        <div class="dd-handle">5 - Consectetuer</div>
-                                        <ol class="dd-list">
-                                            <li class="dd-item" data-id="6">
-                                                <div class="dd-handle">6 - Aliquam erat</div>
-                                            </li>
-                                            <li class="dd-item" data-id="7">
-                                                <div class="dd-handle">7 - Veniam quis</div>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li class="dd-item" data-id="8">
-                                        <div class="dd-handle">8 - Tation ullamcorper</div>
-                                    </li>
-                                    <li class="dd-item" data-id="9">
-                                        <div class="dd-handle">9 - Ea commodo</div>
-                                    </li>
-                                </ol>
-                            </div>
-                            <div class="m-t-md">
-                                <h5>Serialised Output</h5>
-                            </div>
-                            <textarea id="nestable-output" class="form-control"></textarea>
-
-                        </div>
-                    </div>
-                </div>
                 
                 
                 <div class="col-lg-12" >
@@ -487,7 +427,8 @@
                                
                                 
                             </div>
-                            <button class="btn btn-primary text-uppercase" ng-click="addNewIngredient()" type="button">Ajouter un ingredient</button>
+                            <button class="btn btn-primary text-uppercase" ng-click="addNewIngredient()" type="button">Ajouter un ingredient</button><br>
+                            
                             <div class="m-t-md">
                                 <h5>Serialised Output</h5>
                             </div>
@@ -549,9 +490,9 @@
                  }
              };
              // activate Nestable for list 1
-             $('#nestable').nestable({
-                 group: 1
-             }).on('change', updateOutput);
+             //$('#nestable').nestable({
+                 //group: 1
+             //}).on('change', updateOutput);
 
              // activate Nestable for list 2
              $('#nestable2').nestable({
@@ -559,7 +500,7 @@
              }).on('change', updateOutput);
 
              // output initial serialised data
-             updateOutput($('#nestable').data('output', $('#nestable-output')));
+             //updateOutput($('#nestable').data('output', $('#nestable-output')));
              updateOutput($('#nestable2').data('output', $('#nestable2-output')));
 
              $('#nestable-menu').on('click', function (e) {
