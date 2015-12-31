@@ -43,6 +43,9 @@
 .ibox-content{
     padding:10px 50px 10px 30px;
 }
+button.enregistrer{
+    margin-top:-6px;
+}
 
 /**
  * Nestable Draggable Handles
